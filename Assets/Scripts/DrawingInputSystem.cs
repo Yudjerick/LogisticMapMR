@@ -10,6 +10,7 @@ public class DrawingInputSystem : MonoBehaviour, IMixedRealityPointerHandler
 {
     [SerializeField] private PathCreator pathCreator;
     private bool _isDrawing;
+    private Handedness drawingHand;
     [SerializeField] private float optimizationRadius;
     void FinishDrawing(MixedRealityPointerEventData eventData)
     {
@@ -24,16 +25,16 @@ public class DrawingInputSystem : MonoBehaviour, IMixedRealityPointerHandler
 
     public void OnPointerDown(MixedRealityPointerEventData eventData)
     {
-        if (eventData.Handedness == Handedness.Right)
-        {
-            pathCreator.CreateLine();
-            _isDrawing = true;
-        }
+
+        pathCreator.CreateLine();
+        _isDrawing = true;
+        drawingHand = eventData.Handedness;
+
     }
 
     public void OnPointerDragged(MixedRealityPointerEventData eventData)
     {
-        if (_isDrawing && eventData.Handedness == Handedness.Right)
+        if (_isDrawing && eventData.Handedness == drawingHand)
         {
             var point = pathCreator.CalculateLocalPoint(eventData.Pointer.Position);
             if (Math.Abs(point.x) >= 0.5 || Math.Abs(point.y) >= 0.5)
@@ -55,10 +56,12 @@ public class DrawingInputSystem : MonoBehaviour, IMixedRealityPointerHandler
 
     public void OnPointerUp(MixedRealityPointerEventData eventData)
     {
-        if (_isDrawing && eventData.Handedness == Handedness.Right)
+        if (_isDrawing && eventData.Handedness == drawingHand)
         {
             FinishDrawing(eventData);
         }
+
+        drawingHand = Handedness.None;
     }
 
     public void OnPointerClicked(MixedRealityPointerEventData eventData)

@@ -65,7 +65,7 @@ public class PathCreator : MonoBehaviour
             _lineRenderer.material.mainTextureScale = new Vector2(1/lineWidthMultiplier,1);
         }
 
-        var instantiate = Instantiate(truck,transform);
+        var instantiate = Instantiate(truck,_line.transform);
         var vehicleMover = instantiate.GetComponent<VehicleMover>();
         vehicleMover.SetPath(points);
         vehicleMover.GoToStartPosition();

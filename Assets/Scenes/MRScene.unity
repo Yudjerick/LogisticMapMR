@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackedTargetType: 6
-  trackedHandedness: 2
+  trackedHandedness: 3
   trackedHandJoint: 2
   transformOverride: {fileID: 0}
   additionalOffset: {x: 0, y: 0, z: 0}
@@ -256,7 +256,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   facingCameraTrackingThreshold: 80
-  requireFlatHand: 0
+  requireFlatHand: 1
   flatHandThreshold: 45
   followHandUntilFacingCamera: 0
   followHandCameraFacingThresholdAngle: 60
@@ -1046,7 +1046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeProfile: {fileID: 11400000, guid: 31a611a779d3499e8e35f1a2018ca841, type: 2}
+  activeProfile: {fileID: 11400000, guid: af6b4afae3d030341959e0c43b9bbd22, type: 2}
 --- !u!4 &2107559182
 Transform:
   m_ObjectHideFlags: 0
@@ -1283,7 +1283,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4212075659083300968}
   - component: {fileID: 6636009104490831825}
-  - component: {fileID: 8314936683741286948}
   - component: {fileID: 1876367988633769157}
   - component: {fileID: 3273976742544398023}
   m_Layer: 0
@@ -1303,7 +1302,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4212075659655415820}
   - component: {fileID: 6636009104919844789}
-  - component: {fileID: 8314936684243180096}
   - component: {fileID: 1876367989062786209}
   - component: {fileID: 3273976742981770915}
   m_Layer: 0
@@ -1849,7 +1847,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -1941,7 +1939,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -3482,7 +3480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5909813013281207159
 Transform:
   m_ObjectHideFlags: 0
@@ -3542,14 +3540,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &5909813013611893779
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5909813013611893871}
-  m_Mesh: {fileID: 0}
 --- !u!222 &5909813013611893868
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3600,7 +3590,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -3680,7 +3670,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5909813013611893870}
   - component: {fileID: 5909813013611893778}
-  - component: {fileID: 5909813013611893779}
   - component: {fileID: 5909813013611893868}
   - component: {fileID: 5909813013611893869}
   m_Layer: 0
@@ -3835,7 +3824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &5909813013765779168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4063,7 +4052,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -4143,7 +4132,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5909813014114016266}
   - component: {fileID: 5909813014114016374}
-  - component: {fileID: 5909813014114016375}
   - component: {fileID: 5909813014114016264}
   - component: {fileID: 5909813014114016265}
   m_Layer: 0
@@ -4195,14 +4183,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &5909813014114016375
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5909813014114016267}
-  m_Mesh: {fileID: 0}
 --- !u!4 &5909813014195021443
 Transform:
   m_ObjectHideFlags: 0
@@ -4633,22 +4613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36065390e01a3cd40b87e4bf4acd02f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!33 &8314936683741286948
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183416411537468042}
-  m_Mesh: {fileID: 0}
---- !u!33 &8314936684243180096
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183416411979031278}
-  m_Mesh: {fileID: 0}
 --- !u!4 &8437103511113975919
 Transform:
   m_ObjectHideFlags: 0

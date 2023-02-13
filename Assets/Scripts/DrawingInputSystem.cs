@@ -25,11 +25,12 @@ public class DrawingInputSystem : MonoBehaviour, IMixedRealityPointerHandler
 
     public void OnPointerDown(MixedRealityPointerEventData eventData)
     {
-
-        pathCreator.CreateLine();
-        _isDrawing = true;
-        drawingHand = eventData.Handedness;
-
+        if (!_isDrawing)
+        {
+            pathCreator.CreateLine();
+            _isDrawing = true;
+            drawingHand = eventData.Handedness;
+        }
     }
 
     public void OnPointerDragged(MixedRealityPointerEventData eventData)
@@ -59,9 +60,8 @@ public class DrawingInputSystem : MonoBehaviour, IMixedRealityPointerHandler
         if (_isDrawing && eventData.Handedness == drawingHand)
         {
             FinishDrawing(eventData);
+            drawingHand = Handedness.None;
         }
-
-        drawingHand = Handedness.None;
     }
 
     public void OnPointerClicked(MixedRealityPointerEventData eventData)

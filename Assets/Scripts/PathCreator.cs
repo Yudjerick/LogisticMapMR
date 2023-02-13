@@ -66,6 +66,7 @@ public class PathCreator : MonoBehaviour
         }
 
         var instantiate = Instantiate(truck,_line.transform);
+        instantiate.transform.localRotation = Quaternion.Euler(0, 90, -90);
         var vehicleMover = instantiate.GetComponent<VehicleMover>();
         vehicleMover.SetPath(points);
         vehicleMover.GoToStartPosition();

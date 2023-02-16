@@ -1,17 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class VehicleMover : MonoBehaviour
 {
     public Vector2[] points;
-    [SerializeField] private float speed;
-    [SerializeField] private float maxDistance;
-    private int _targetIndex;
-    private Quaternion _targetRotation;
-    private int _direction;
+    public float maxDistance;
+    public int _targetIndex;
+    public Quaternion _targetRotation;
+    public int _direction;
+    private MovingType movingType;
 
+    [HideInInspector] public BrushPreset brushPreset;
     void Start()
     {
         _targetIndex = 0;
@@ -20,38 +22,18 @@ public class VehicleMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, _targetRotation, 0.15f);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, 
+            _targetRotation, 1.5f * brushPreset.speed );
     }
 
     void Update()
     {
-        
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition,points[_targetIndex], Time.deltaTime * speed);
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition,points[_targetIndex], 
+            Time.deltaTime * brushPreset.speed);
         if (Mathf.Abs(((Vector2)transform.localPosition - points[_targetIndex]).magnitude) <= maxDistance)
         {
-            
-            _targetIndex += _direction;
-            
-            if (_targetIndex == points.Length && _direction == 1)
-            {
-                
-                _targetIndex = 1;
-                transform.localPosition = points[0];
-                RotateInstantly();
-            }
-            _targetRotation = transform.localRotation*RotateToPoint(points[_targetIndex]) ;
-            /*if (_targetIndex == points.Length && _direction == 1)
-            {
-                _targetIndex = points.Length - 2;
-                _direction = -1;
-            }
-            else if(_targetIndex == 0 && _direction == -1)
-            {
-                _targetIndex = 1;
-                _direction = 1;
-            }*/
+            brushPreset.movingType.ApplyTypeFeatures(this);
         }
-        
     }
 
     public void SetPath(List<Vector2> path)
@@ -65,11 +47,8 @@ public class VehicleMover : MonoBehaviour
         RotateInstantly();
     }
 
-    Quaternion RotateToPoint(Vector2 point)
+    public Quaternion RotateToPoint(Vector2 point)
     {
-        /*transform.Rotate(0,Vector2.SignedAngle(point-(Vector2)transform.localPosition,
-            transform.parent.InverseTransformDirection(transform.forward)),0,Space.Self);*/
-        
         return Quaternion.Euler(0,Vector2.SignedAngle(point-(Vector2)transform.localPosition,
             transform.parent.InverseTransformDirection(transform.forward)),0);
     }
@@ -79,10 +58,4 @@ public class VehicleMover : MonoBehaviour
         transform.Rotate(0, Vector2.SignedAngle(points[1] - (Vector2)transform.localPosition,
             transform.parent.InverseTransformDirection(transform.forward)), 0, Space.Self);
     }
-
-    /*Vector2 GetLocalForward()
-    {
-        return new Vector2(transform.forward.)
-    }*/
-    
 }

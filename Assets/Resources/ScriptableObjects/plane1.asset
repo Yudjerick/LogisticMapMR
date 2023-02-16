@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641c027efdbebd141802b077d36ec1eb, type: 3}
+  m_Name: plane1
+  m_EditorClassIdentifier: 
+  truckModel: {fileID: 6747018893930608124, guid: 9f53b82fafe622a428417ecddec61777, type: 3}
+  speed: 0.24
+  bakedLineMaterial: {fileID: 2100000, guid: 888a8610d89c32247b9c6dc18fe08d3f, type: 2}
+  selectedLineMaterial: {fileID: 2100000, guid: a467b970260a9be4ebf21e957767d4e0, type: 2}
+  lineWidthMultiplier: 0.05
+  lineRelief: 0.004
+  movingType: {fileID: 11400000, guid: 920cd74116aa0c5478dbc3299319cf6c, type: 2}

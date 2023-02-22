@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Truck1
   m_EditorClassIdentifier: 
   truckModel: {fileID: 3821994523617327349, guid: 834467fba62517c40ba7cb4db834568d, type: 3}
-  speed: 0.16
+  speed: 0.095
   bakedLineMaterial: {fileID: 2100000, guid: 99e475bb3f9af544e807e57adc70b7e0, type: 2}
   selectedLineMaterial: {fileID: 2100000, guid: ed26c95d590752b41a5315f6ff512804, type: 2}
   lineWidthMultiplier: 0.015

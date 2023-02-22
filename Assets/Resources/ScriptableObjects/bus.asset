@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: bus
   m_EditorClassIdentifier: 
   truckModel: {fileID: 2830132185642795416, guid: bd07442a6eff6f9409cb6e15c233ee20, type: 3}
-  speed: 0.07
+  speed: 0.06
   bakedLineMaterial: {fileID: 2100000, guid: d0cd7f41e1b558c43a5d344fafc1c823, type: 2}
   selectedLineMaterial: {fileID: 2100000, guid: 841d5fbaeae987c42a8b5e87ee26fc26, type: 2}
-  lineWidthMultiplier: 0.01
+  lineWidthMultiplier: 0.007
   lineRelief: 0.005
   movingType: {fileID: 11400000, guid: 920cd74116aa0c5478dbc3299319cf6c, type: 2}
